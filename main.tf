@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = var.region # Adjust the region as needed
+  region = var.awsRegion # Adjust the region as needed
 }
 
 resource "aws_security_group" "allow_ssh_http" {
@@ -44,7 +44,7 @@ resource "aws_security_group" "allow_ssh_http" {
 
 resource "aws_instance" "example" {
   ami           = "ami-0aff18ec83b712f05" # Amazon Linux 2 AMI (update to the latest AMI for your region)
-  instance_type = var.instance_type
+  instance_type = var.instanceType
 
   # User data to install Docker, Docker Compose, pull from GitHub, and run Docker Compose
 user_data = <<-EOF
@@ -65,7 +65,7 @@ user_data = <<-EOF
   security_groups = [aws_security_group.allow_ssh_http.name]
 
   tags = {
-    Name = var.name
+    Name = var.instanceName
   }
 }
 
