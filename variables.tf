@@ -1,4 +1,4 @@
 
-variable "name" {}
-variable "instance_type" {}
-variable "region" {}
+variable "instanceName" {}
+variable "instanceType" {}
+variable "awsRegion" {}
