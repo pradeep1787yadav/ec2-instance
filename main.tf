@@ -57,8 +57,8 @@ user_data = <<-EOF
               sudo apt install docker-ce docker-ce-cli containerd.io -y
               sudo systemctl start docker
               sudo systemctl enable docker
-              git clone https://github.com/pradeep1787yadav/three-tier-architecture-demo.git
-              cd three-tier-architecture-demo
+              git clone https://github.com/raviiai/docker-compose.git
+              cd docker-compose
               sudo docker compose up
               EOF
 
