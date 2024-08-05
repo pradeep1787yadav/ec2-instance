@@ -1,3 +1,12 @@
+terraform {
+  backend "s3" {
+    bucket         = "terraform-tf-state-file-bucket-1"
+    key            = "terraform.tfstate"
+    region         = "us-west-2"
+    encrypt        = true
+  }
+}
+
 provider "aws" {
   region = "us-west-2" # Adjust the region as needed
 }
@@ -33,7 +42,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.small"
 
   # User data to install Docker, Docker Compose, pull from GitHub, and run Docker Compose
- user_data = <<-EOF
+user_data = <<-EOF
               #!/bin/bash
               sudo apt update -y
               sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
