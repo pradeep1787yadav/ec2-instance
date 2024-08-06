@@ -12,12 +12,12 @@ spec:
   parameters:
     - title: ECS Cluster
       required:
-        # - InstanceName
-        # - Region
-        # - action
+        - Cluster_Name
+        - Region
+        - action
       properties:
-        InstanceName:
-          title: Cluster Name
+        Cluster_Name:
+          title: Cluster_Name
           type: string
           description: Name of the Instance to be created
           ui:autofocus: true
